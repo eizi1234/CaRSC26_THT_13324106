@@ -84,7 +84,21 @@ Dia menandakan suatu bahwa suatu name berupa std, merupakan bagian dari suatu na
        global interpreter lock (GIL) = mekanisme untuk menghindari akses bersamaan ke objek dari thread yang berbeda
        thread safety = Jika GIL menghindar maka thread safety memastikan agar objek yang diakses berbagai thread dieksekusi dengan aman.
 #### ii. Kodingan ada di lampiran
-### 4.
+### 4. Perhatikan file [ini](https://github.com/eizi1234/CaRSC26_THT_13324106/blob/main/lampiran/pipeline_parser.hpp) dan [ini](https://github.com/eizi1234/CaRSC26_THT_13324106/blob/main/lampiran/vision_to_mavros.hpp). 
+#### i. Ada beberapa perbedaan sederhana yang dapat dilihat dalam konteks header:
+#### - **#include** = _pipeline_parscher_ memanggil berbagai file dari internal ("") dan dari library (<>) dengan #include. Tetapi, _vision_to_mavros_ hanya memanggil file dari library (<>) dengan #include.
+#### - **inheritance**, **::**, dan **encapsulation** = pada _pipeline_parscher_, dia hanya memanggil namespace dan name yg dipanggil. Akan tetapi, _vision_to_mavros_ menggunakan _inheritance_ agar dapat mengklasifikan variabel baru, lalu menandakannya (::) dengan vector dari std.
+#### ii. Kedua file doxygen ini dibuat melalui software doxygen itu sendiri. Kedua file terlampir pada file lampiran.
+### 5. Firmware dan sistem benam
+#### i. Jika software adalah perangkat lunak dalam dunia maya, **Firmware** adalah suatu komponen software/perangkat lunak didalam suatu hardware spesifik, anggaplah sudah satu paket. Mereka bekerja untuk suatu hal spesifik tertentu. Fungsi **firmware dalam UAV** adalah kemampuan perangkat lunaknya (firmwware) untuk langsung berinteraksi dengan perangkat kerasnya (hardware), sehingga lebih mudah untuk menentukan berbagai macam variabel telemetri.
+#### ii. Seperti namanya, **Real Time Operating System** adalah sistem (bukan program yang menghasilkan output spesifik) yang memastikan bahwa suatu program menghasilkan variabel atau output dengan tepat waktu. Maka dari itu, RTOS lekat dengan karateristik determinismenya yang memastikan ketepatan waktu dala menghasilkan outout dalam suatu sistem. **UAV** dan **RTOS** mengatur berbagai keamanan, seperti: kontrol terbang dan hasil telemetri avionik.
+#### iii. Ada beberapa konsep dasar dari dasar komunikasi serial yang dijelaskan secara komprehensif oleh [sumber](https://www.rfwireless-world.com/terminology/uart-vs-spi-vs-i2c-comparison) berikut:
+##### - **Universal Asynchronous Receiver/Transmitter** = merupakan protokol komunikasi antar 2 alat yang keduanya saling men-transmisi dan menerima daya satu sama lain. Receiver (Rx) biasanya harus mengetahui terlebih dahulu baud rate dari Transmitter (Tx) sebelum komunikasi dimulai. Pada UAV, biasanya digunakan untuk **mengirim** berbagai **variabel** **telemetri**. <img width="577" height="344" alt="image" src="https://github.com/user-attachments/assets/b2b43433-cbc0-492e-9a7c-fc2ca586e9ab" />
 
+##### - **Inter-Integrated Circuit** = protokol komunikasi 2 arah yang memanfaatkan _serial data line_ (SDA) dan _Serial Clock Line_ (SCL). Biasanya digunakan untuk **mengintegrasi sensor**.
+<img width="553" height="570" alt="image" src="https://github.com/user-attachments/assets/a860d2d2-dbd5-4b2d-9819-aa7bf5623ec9" />
 
+##### - **Serial Periperal Interface** = protokol komunikasi yang memanfaatkan banyak pin: Serial Clock_(SCL), _Master Output, Slave Input_ (MOSI), _Master Input_ _Slave Output_ (MISO), _Slave Select_ (SS). Hal ini membuat protokol komunikasi ini sering digunakan untuk menerima data telemetri. Dia dianggap lebih kompeten dibanding Inter-Integrated Circuit (I2C). <img width="581" height="521" alt="image" src="https://github.com/user-attachments/assets/a17f0c5f-7f23-49a4-83e0-202f85d222c6" />
+
+### 6. Jurusan Control and Perception (ConCept)
 
