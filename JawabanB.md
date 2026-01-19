@@ -48,3 +48,18 @@
         a->makan(); 
         delete a;
         +) artinya ada hewan lainnya/ ada class lain, masih bisa dianggap seperti babi (ini yang untuk kali ini saya pahami).
+
+### 2. Mendefinisikan beberapa konsep C++
+### - #include <file_name> dan #include "file_name" = Menginklusi berbagai file tertentu kedalam kodingan. <> biasanya digunakan untuk memanggil library dan "" digunakan untuk memanggil file-file tertentu.
+### - **#ifdef** adalah perintah kondisional yang berfungsi pada suatu _define_. Jika define suatu variabel sudah ter-defined, maka ifdef akan mengaktifkan perintah selanjutnya. **ifndef** aktif jika suatu variabel tidak ter-defined, dia akan mengaktifkan perintah selanjutnya. **endif** adalah command untuk menyelesaikan perintah kondisional. Yang terakhir, **#pragma** adalah perintah yang hanya dapat dilihat oleh preprocessor yang isinya mengenai informasi tertentu.
+### - **scope resolution operator (::)** adalah command yang dapat dianggap _penanda_. Contoh; ada 
+        **std::cout<<hai guys** 
+Dia menandakan suatu bahwa suatu name berupa std, merupakan bagian dari suatu namespace std. << lebih semacam perintah untuk menghasilkan suatu output. Output yang ada pada contoh tersebut adalah << memerintahkan untuk menghasilkan "hai guys". **Namespace**, seperti namanya, mendefinisikan kumpulan library yang berisi banyak name.
+### - **Define** merupakan perintah untuk mendefinsikan nilai suatu variabel. Misalnya, 
+                #define pi = 3.14
+###   Lalu, **using** merupakan perintah untuk menyatakan jenis namespace, sehingga tidak perlu lagi mendefinisikan panjang-panjang seperti pada scope resolution operator
+        using namespace std
+        cout<<hai guys
+### jika kita hanya ingin menggunakan _std::cout_ saja, maka kita harus menulis std berkali-kali. Using memudahkan dengan menyatakan bahwa name yang dipanggil akan terus berasal dari namespace yang sama.
+
+### - **Define**
