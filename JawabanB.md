@@ -98,7 +98,30 @@ Dia menandakan suatu bahwa suatu name berupa std, merupakan bagian dari suatu na
 ##### - **Inter-Integrated Circuit** = protokol komunikasi 2 arah yang memanfaatkan _serial data line_ (SDA) dan _Serial Clock Line_ (SCL). Biasanya digunakan untuk **mengintegrasi sensor**.
 <img width="553" height="570" alt="image" src="https://github.com/user-attachments/assets/a860d2d2-dbd5-4b2d-9819-aa7bf5623ec9" />
 
-##### - **Serial Periperal Interface** = protokol komunikasi yang memanfaatkan banyak pin: Serial Clock_(SCL), _Master Output, Slave Input_ (MOSI), _Master Input_ _Slave Output_ (MISO), _Slave Select_ (SS). Hal ini membuat protokol komunikasi ini sering digunakan untuk menerima data telemetri. Dia dianggap lebih kompeten dibanding Inter-Integrated Circuit (I2C). <img width="581" height="521" alt="image" src="https://github.com/user-attachments/assets/a17f0c5f-7f23-49a4-83e0-202f85d222c6" />
+##### - **Serial Periperal Interface** = protokol komunikasi yang memanfaatkan banyak pin: Serial Clock_(SCL), _Master Output, Slave Input_ (MOSI), _Master Input_ _Slave Output_ (MISO), _Slave Select_ (SS). Hal ini membuat protokol komunikasi ini sering digunakan untuk menerima data telemetri. Dia dianggap lebih kompeten dibanding Inter-Integrated Circuit (I2C). 
+<img width="581" height="521" alt="image" src="https://github.com/user-attachments/assets/a17f0c5f-7f23-49a4-83e0-202f85d222c6" />
 
 ### 6. Jurusan Control and Perception (ConCept)
+#### i. Konsep-konsep dasar pada ROS 2 Humble :
+#### - **Nodes** = merupakan komponen utama pada ROS 2 Graph. Untuk memahaminya, biasanya saya membayangkan nodes sebagai sebuah wire dari rangkaian listrik, yaitu merupakan kerangka utama dari ROS 2 graph. Jika dia tidak ada, nanti rangkaiannya short semua / ga jalan. Nodes memiliki berbagai fitur, seperti: publish, subscribe, dll.
+#### - **Topics** = merupakan komponen publisher atau subscribe. Biasanya digunakan untuk **streaming**.
+#### - **Actions** = adalah prosedur untuk melakukan sesuatu dengan feedback dan kemampuan untuk membatalkan _action_ sebelumnya.
+#### - **Services** = biasanya merupakan pemanggilan prosedur antar satu node ke node yang lain. Intinya, **node berkomunikasi** antar satu dengan yang lainnya.
+#### - **Parameters** = Merupakan gabungan string dan value,yang artinya mengandung nodes dan mengonfigurasinya saat _startup_ hingga _runtime_.
+
+#### ii. Contoh pengerjaan untuk topik time dengan node publisher **clock** dan subscriber **watch** sudah tercantum pada file lampiran. **Perlu diperhatikan** bahwa saya baru mengetahui bahwa file package. xml, CmakeLists, clock, dan watch disediakan semacam template dari C++, sehingga saya mengambilnya. Akan tetapi, modifikasi template tersebuh **saya kerjakan dengan AI** karena saya masih sangat kurang paham dengan perintah soal. Tetapi, file-file soal tersebut saya coba pelajari.
+
+#### iii. Contoh pengerjaan dengan modifikasi yang diinginkan sudah ada di file lampiran. 
+
+#### iv. Berikut akan dijelaskan _Pinhole Camera Model_ dari sumber buku yg katanya legend itu.
+#### - Konsep dari **Pinhole Camera Model** adalah menggunakan cahaya yang diproyeksikan kepada bidang seberangnya. Ciri dari hasil proyeksi ini _inverted_ atau terbalik karena sinar yang merambat lurus akan jatuh sepanjang perambatan cahaya. Intinya, cara paling mendasar untuk memahami bagaimana dunia 3D diproyeksikan ke dalam gambar 2D secara matematis, di mana semua sinar cahaya dipaksa melewati satu titik fokus yang sama. <img width="908" height="730" alt="image" src="https://github.com/user-attachments/assets/57c902f5-d070-4f94-ba3b-438b7c01c151" />
+
+#### - Secara sederhana, **Homogenous Coordinates** adalah kordinat template [x,y,z] yang biasanya digunakan untuk mengekspresikan suatu point 2D hingga 3D. Homogenous coordinates juga dapat diangagap sebagai ekstensi yang memperlihatkan hasil matriks. 
+                [X, y] akan menjadi [x,y,1]
+                [x,y,z] akan menjadi [x,y,z,1]
+Sedangkan, **Rigid Transformation** adalah transformasi yang menginklusi matriks rotasi dan matriks translasi. 
+                [R, T] [0, 0] pada 2D
+                [R(3x3), T(3x3)] [0,0] pada 3D
+#### - **Parameter Intrinsic** adalah parameter yang berasal dari dalam kamera seperti: focal length, perbesaran, dll. Intinya, parameter ini merupakan aspek-aspek internal yang mempengaruhi kualitas tangkapan gambar. Parameter ini dapat berupa matriks yang bekerja untuk DUNIA KAMERA (3D) yang bekerja untuk mengubahnya menjadi NILAI PIXEL (2D). **Parameter Ektrensic** adalah parameter yang berasal dari luar kamera seperti: kualitas cahaya, _angle_ kamera, intinya merupakan aspek-aspek luar yang mempengaruhi kualitas tangkapan gambar. Parameter ini dapat berupa matriks yang bekerja untuk DUNIA LUAR (3D) yang bekerja untuk memproyeksikan dunianya menjadi DUNIA KAMERA (3D).  <img width="966" height="242" alt="image" src="https://github.com/user-attachments/assets/0152259c-e28c-4ea1-9d92-e6bf972f270d" />
+#### - 
 
