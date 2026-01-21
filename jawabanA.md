@@ -27,7 +27,17 @@
     ###### - Flight Log Analysis = hasil analisis yang dilakukan setelah penerbangan untuk mengetahui hasil performansi sekaligus mengidentifkasi error. 
     ###### - Customizable Features = fitur yang memberikan akses untuk menentukan dan meng-kustom UAV yang akan disimulasikan
 ##### c. Terlampir pada file lampiran merupakan hasil dari simulasi pembuatan waypoint sesuai yang soal perintahkan.
-#### 4. SUSAH
+#### 4. Berikut adala beberapa hasil penginstalan ubuntu dengan WSL.
+#### <img width="1625" height="737" alt="image" src="https://github.com/user-attachments/assets/b4b6742c-73f6-49e2-9e25-294a40813fe9" />
+#### - Berikut adalah hasil dari penginstalan beberapa python dari terminal ubuntu.
+<img width="1476" height="876" alt="image" src="https://github.com/user-attachments/assets/ea1260f0-72ba-4bf2-b2ed-e142b028c2d7" />
+
+#### - Berikut adalah hasil install ROS 2 Humble dan sistem talker dan listerner sederhana
+<img width="1559" height="846" alt="image" src="https://github.com/user-attachments/assets/65ba35a2-63bc-4040-80c8-184138e62674" /> untuk setelah install ROS 2 
+
+<img width="1817" height="975" alt="image" src="https://github.com/user-attachments/assets/f01eac9d-401c-4c27-a8c9-8f4ef0b257df" /> untuk sistem talker-listener
+
+
 #### 5. Berikut adalah dasar-dasar UAV:
 ##### a. Ada beberapa jenis sayap untuk penerbangan pada drone. Yang pertama ada, **fixed wing** yaitu drone yang menyerupai sayap pada umumnya. Biasanya drone ini digunakan karena memiliki kelebihan untuk hanya fokus pada energi yang dibutuhkan untuk mengangkat drone katas, sehingga lebih efisien dalam energi. Kemudian **rotary wing**, yaitu drone dengan yang menyerupai bentuk baling-baling (rotor), layaknya helikopter. Fixed wing dibagi menjadi 2, **Multy-Rotor** yaitu drone dengan beberapa baling-baling yang biasanya dimanfaatkan pada konteks fotografi. Lalu, juga ada **Single-Rotor** yaitu drone dengan satu baling-baling yang baisanay dianggap lebih efisien dibanding multy-rotor dalam oenggunaaannya.
 ##### b. **Roll, Yaw, Pitch** adalah istilah untuk bentuk pergerakan pada drone. **Roll** adalah pergerakan rotasi drone secara maju mundur. **Pitch** adalah pergerakan rotasi drone secara kiri kanan, dan **Yaw** adalah pergerakan drone secara 360 derajat : <img width="827" height="716" alt="image" src="https://github.com/user-attachments/assets/6073d654-3021-4e06-b7ff-a521d3447a85" />
