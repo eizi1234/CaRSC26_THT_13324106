@@ -1,6 +1,6 @@
 # Jawaban B
-## DASAR PEMROGRAMAN
-### 1. Ada beberapa konsep utama pada OOP:
+### 1. DASAR PEMROGRAMAN
+### i. Ada beberapa konsep utama pada OOP:
 ### - **Class** = merupakan template utama untuk pembuatan objek
         class Person {
         public:
@@ -48,6 +48,9 @@
         a->makan(); 
         delete a;
         +) artinya ada hewan lainnya/ ada class lain, masih bisa dianggap seperti babi (ini yang untuk kali ini saya pahami).
+
+### ii. Pada intinya, yang saya pahami adalah mengubah file telemetry tersebut untuk dilakukan OOP. Kemudian, saya harus mengidentifikasi manakah tipe design pattern yang cocok. Dalam hal ini, terutama setelah bertanya ke AI, lebih baik digunakan **strategic pattern** karena ini memungkinan drone untuk berubah-ubah strategi tanpa menggangu algoritma utama. Intinya yang saya pahami, drone **memiliki lebih banyak kemampuan **ketika pemrograman untuk berjalan dengan bikin drone menjadi lebih "pintar".
+_semuanya sudah ada di file lampiran_
 
 ### 2. Mendefinisikan beberapa konsep C++
 #### - #include <file_name> dan #include "file_name" = Menginklusi berbagai file tertentu kedalam kodingan. <> biasanya digunakan untuk memanggil library dan "" digunakan untuk memanggil file-file tertentu.
