@@ -127,4 +127,42 @@ Sedangkan, **Rigid Transformation** adalah transformasi yang menginklusi matriks
 #### - **Proses kalibrasi linear** adalah kalibrasi yang memang dilakukan untuk memperbaiki kesalahan pengukuran, akan tetapi kalibrasi linear mengasumsikan bahwa kamera sudah sempurna. Hal ini menyebabkan proses kalkulasi yang sangat cepat, tetapi tidak mengosiderasi distorsi lensa sehingga masih ada error. **Kalibrasi non-linear** adalah kalibrasi yang dilakukan untuk memperbaiki kesalahhan pengukuran. Kalibrasi ini mengasumikan penggunaan kamera di dunia nyata, sehingga kamera akan mengalkulasi berbagai kemungkinan distorsi lensa, dan akhirnya mengurangi erroe. Kalibrasi ini adalah kalibrasi yang paling mendekati real-life.
 
 ### 6. Jurusan Ground Control Station (GCS)
-#### -
+#### i. Perhatikan beberapa informasi mengenai MAVLink
+#### - Ada beberapa jenis sturktur pesan:
+        A. Pesan Header
+        B. Panjang Pesan (9)
+        C. Pesan Sekuens
+        D. System ID = menginformasikan sistem apa yg mengirim pesan
+        E. Component ID = menginformasikan komponen apa yg mengirim pesan
+        F. Message ID = pesan apa yg terkirim
+        G. Message Data (Display)
+#### - **System ID** merupakan sistem utama yang mengirim informasi ke display. Kita dapat tahu apakah sistem tersebut dari ID-ya. Dalam mission planner, berbagai fitur informasi pada mission planner lah yang merupakan sistem yang selalu mengirim data ke dispplay. **Component ID** adalah sistem didalam sistem (subsistem) yang datang bersama sistem sebagai bentuk informasi yang masuk ke dalam display.
+#### - Cara kerja dari **Heartbeat** adalah dia akan terus menginformasikan status hidup/tidaknya drone pada remote atau display per beberapa detik. Pesan akan dikirim dalam bentu pesan. Karena status akan diinformasikan per beberapa detik, dalam algoritmanya, detik heartbeat akan kembali menjadi 0 ketika penyampaian status kepada remote baru saja dilakukan.
+#### - Berikut adalah jenis pesan MAVLink yang biasanya ada
+        A. Pesan Status
+           - HEARTBEAT = menginformasikan status hidup/mati
+           - SYS_STATUS = Memberikan informasi mengenai kesehatan sistem secara keseluruhan, termasuk tegangan baterai, arus, dan beban CPU.
+           - STATUSTEXT = Pesan berbasis teks yang biasanya digunakan untuk mengirim peringatan atau informasi penting kepada pilot
+        B. Pesan Navigasi dan Informasi Data
+           - GLOBAL_POSITION_INT: Mengirimkan koordinat GPS (latitude, longitude, altitude) juga kecepatan drone dalam format integer.
+           - VFR_HUD : Berisi data instrumen terbang penting seperti airspeed, groundspeed, heading, throttle, bahkan hingga ketinggian di atas permukaan laut.
+           - ATTITUDE : Mengirimkan data orientasi (perputaran) drone, yaitu nilai roll, pitch, dan yaw dalam radian.
+        C. Pesan Misi dan Waypoint
+           - MISSION_ITEM : Berisi data satu titik waypoint tertentu (koordinat, aksi, dan parameter).
+           - MISSION_COUNT : Digunakan saat memulai proses upload untuk menginformasikan berapa banyak waypoint yang dihitung.
+           - MISSION_REQUEST : Pesan permintaan dari satu sistem ke sistem lain untuk mengirimkan detail waypoint tertentu dalam sebuah misi.
+        D. Pesan Perintah / Command
+           - COMMAND_LONG : Digunakan untuk mengirim perintah umum seperti Takeoff, Land, Arming, atau mengubah parameter sistem secara spesifik.
+           - COMMAND_ACK : Pesan konfirmasi untuk memberitahu GCS apakah perintah COMMAND_LONG berhasil dieksekusi, ditolak, atau sedang diproses.
+#### ii. Berikut adalah diagram arsitektur sederhana untuk mendeskripsikan cara kerja aplikasi web. Dalam gambar tersebut, terdapat 2 warna anak panah yang membedakan sifat kerjanya. **Panah hijau tua** adalah sistem kerja ketika ada input dari pilot. Jika pilot menekan takeoff (frontend), maka algoritma akan langsung bekerja untuk membuat pesawat terbang (backend), informasi algoritma ini akan dikirim ke database dengan UAV gateway yang mampe mentranslasi _bahasa komputer_ jadi _bahasa UAV_ (bahasa agar pesawatnya paham gitu). **Panah krem** adalah sistem kerja dari dalam hingga ke display, misalnya seperti heartbeat. Heartbeat bekerja dengan database mengirim informasi status melalui UAV gateway, yang akan sampai sebagai input algoritma (backend). Output algoritma ini akan membuat status heartbeat terupdate di display (frontend).
+
+#### iii. Perhatikan beberagai informasi mengenai Docker
+#### - **Container** adalah sistem dalam drocker yang akan mengisolasi keseluruhan algoritma software. Hal ini membuat software terlindungi dan dapat digunakan di berbagai lingkungan. **Virtual Machine** BUKAN BAGIAN DARI DOCKER. Dia adalah emulasi sistem komputer yang menggunakan perangkat lunak Hypervisor, yang berupa lapisan perangkat lunak yang membagi sumber daya fisik (seperti RAM dan CPU). Virtual Machine berperan seperti komputer fisik yang memiliki sistem operasi (OS), penyimpanan, dan kartu jaringan sendiri di dalam komputer.
+
+#### - **Cara kerja dockerfile** adalah Ddengan cara membaca instruksi teks untuk membangun semacam Docker Image melalui sistem pelapisan/layering. Proses ini dimulai dengan menentukan Base Image menggunakan instruksi FROM, yang berfungsi sebagai fondasi sistem operasi atau lingkungan bahasa pemrograman tertentu. Setiap instruksi selanjutnya, seperti RUN untuk menginstal pustaka seperti OpenCV atau COPY untuk memasukkan kode GCS, akan menciptakan lapisan baru permanen dan dapat disimpan dalam cache untuk mempercepat proses build di masa mendatang.
+
+
+
+
+
+
