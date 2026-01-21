@@ -18,7 +18,8 @@
    <img width="1358" height="388" alt="image" src="https://github.com/user-attachments/assets/b1ec2f46-68ab-4376-ac10-e605fbe414b8" />
 <img width="1716" height="765" alt="image" src="https://github.com/user-attachments/assets/94b60fe5-73de-49ef-aa1f-df5afdd313ea" />
 ##### d. Berikut adalah hasil menyelsaikan SSH keys di WW3Schools:<img width="1262" height="817" alt="image" src="https://github.com/user-attachments/assets/17dda5e8-d2a6-4e9f-afd4-c80d2b40c170" />
-##### e. Berikut adalah hasil branching jawaban A dan B:
+##### e. Berikut adalah hasil branching jawaban A dan B: <img width="1262" height="188" alt="image" src="https://github.com/user-attachments/assets/eaf24b75-ca1d-4b7f-9d43-d22e0aec66d2" />
+
 #### 3. Berikut adalah proses pengerjaan untuk Mission Planner:
 ##### a. Berikut adalah hasil setelah mendonwnload mission planner:  <img width="1596" height="920" alt="image" src="https://github.com/user-attachments/assets/5a272adb-5444-43c3-8863-22a8eecf030a" />
 ##### b. Berikut adalah beberapa fitur dalam mission planner:
