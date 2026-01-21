@@ -132,6 +132,7 @@ Sedangkan, **Rigid Transformation** adalah transformasi yang menginklusi matriks
 #### **apter**
 <img width="1031" height="596" alt="image" src="https://github.com/user-attachments/assets/3f1aeda6-fcd5-4490-9d7b-68662f3a95e6" />
 
+#### vi. Untuk video bipor dan apter dapat dilihat di lampiran.
 
 ### 6. Jurusan Ground Control Station (GCS)
 #### i. Perhatikan beberapa informasi mengenai MAVLink
