@@ -126,6 +126,13 @@ Sedangkan, **Rigid Transformation** adalah transformasi yang menginklusi matriks
 #### - **Perpective Projection Matrix** adalah matriks yang biasanya digunakan untuk menghitung berbagai sumbu di bidang. Objek yang berada lebih jauh akan tampak lebih kecil di bidang gambar dibandingkan objek yang dekat. Sehingga, karena matrix ini memilki perhiutngan x dan y yang kejauhannya berbeda beda (z), matrix ini disebut non-linear. **Weak-projection matrix** adalah matriks yang sama, akan tetapi diasumsikan memiliki nilai z yang sama untuk semua sumbu, hal inni dikarenakan  biasanya matriks ini digunakan untuk mengukur objek yang jauh, sehigga semua ketampakan sumbu akan lebih kecil, dan diasumsikan semua. Hal ini menyebabkan matriks ini disebut matriks linear.
 #### - **Proses kalibrasi linear** adalah kalibrasi yang memang dilakukan untuk memperbaiki kesalahan pengukuran, akan tetapi kalibrasi linear mengasumsikan bahwa kamera sudah sempurna. Hal ini menyebabkan proses kalkulasi yang sangat cepat, tetapi tidak mengosiderasi distorsi lensa sehingga masih ada error. **Kalibrasi non-linear** adalah kalibrasi yang dilakukan untuk memperbaiki kesalahhan pengukuran. Kalibrasi ini mengasumikan penggunaan kamera di dunia nyata, sehingga kamera akan mengalkulasi berbagai kemungkinan distorsi lensa, dan akhirnya mengurangi erroe. Kalibrasi ini adalah kalibrasi yang paling mendekati real-life.
 
+#### v. Berikut adalah hasil bipor apter dari foto yang telah diubah oleh opencv.
+#### **bipor** 
+<img width="1762" height="1068" alt="image" src="https://github.com/user-attachments/assets/36fe0787-b6ec-474c-95cf-d45ff557fb44" />
+#### **apter**
+<img width="1031" height="596" alt="image" src="https://github.com/user-attachments/assets/3f1aeda6-fcd5-4490-9d7b-68662f3a95e6" />
+
+
 ### 6. Jurusan Ground Control Station (GCS)
 #### i. Perhatikan beberapa informasi mengenai MAVLink
 #### - Ada beberapa jenis sturktur pesan:
