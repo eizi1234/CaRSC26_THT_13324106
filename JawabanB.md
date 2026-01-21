@@ -161,6 +161,10 @@ Sedangkan, **Rigid Transformation** adalah transformasi yang menginklusi matriks
 
 #### - **Cara kerja dockerfile** adalah Ddengan cara membaca instruksi teks untuk membangun semacam Docker Image melalui sistem pelapisan/layering. Proses ini dimulai dengan menentukan Base Image menggunakan instruksi FROM, yang berfungsi sebagai fondasi sistem operasi atau lingkungan bahasa pemrograman tertentu. Setiap instruksi selanjutnya, seperti RUN untuk menginstal pustaka seperti OpenCV atau COPY untuk memasukkan kode GCS, akan menciptakan lapisan baru permanen dan dapat disimpan dalam cache untuk mempercepat proses build di masa mendatang.
 
+#### - ada beberapa **manfaat penggunaan dockerfile**
+        A. Konsistensi Antar Lingkungan = karena sistem isolasinya akan melindungi software dari berbagai isu
+        B. Deployment yang cepat karena dockerfile yang ringan
+        
 
 
 
