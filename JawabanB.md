@@ -176,7 +176,7 @@ Sedangkan, **Rigid Transformation** adalah transformasi yang menginklusi matriks
         A. Konsistensi Antar Lingkungan = karena sistem isolasinya akan melindungi software dari berbagai isu
         B. Deployment yang cepat karena dockerfile yang ringan
         
-#### iv. Hasil Software dikirim dalam bentuk ZIP yang berisikan berbagai folder algoritma: frontend, backend, dan docker.
+#### iv. Hasil Software dikirim dalam bentuk ZIP yang berisikan berbagai folder algoritma: frontend, backend, dan docker. Untuk software, dapat dilihat [disini](http://localhost:3000/).
 
 #### v. Penjelasan :
 Sebernarnya, untuk menghubungkan software dengan MAVLink, dapat dilakukan dengan** menggunaakan MAVLink gateway**. Jika diliat dari beberapa informasi jawaban (yg baru dipelajari dan sudah di konfirm AI), bisa **digunakan UDP** (User Data Protocol) antara server backend dengan remote UAV. Setelah terkoneksi, web dapat menerima/mengirimkan informasi ke UAV dari gateway.
